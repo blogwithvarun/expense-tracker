@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h2>Expense tracker</h2>
+      </div>
+
+      <div class="summary-body">
+        <div class="summary-grid">
+          <div class="sum-grid">
+            <div class="sum-label">Balance</div>
+            <div class="sum-value" id="balanceValue">&#8377; 0</div>
+          </div>
+          <div class="sum-grid">
+            <div class="sum-label">Income</div>
+            <div class="sum-value" id="incomeValue">&#8377; 0</div>
+          </div>
+          <div class="sum-grid">
+            <div class="sum-label">Expense</div>
+            <div class="sum-value" id="expenseValue">&#8377; 0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter">
+        <button class="filter-btn active" id="all-btn">All</button>
+        <button class="filter-btn" id="income-btn">Income</button>
+        <button class="filter-btn" id="expense-btn">Expense</button>
+      </div>
+
+      <div class="category">
+        <select name="category" id="cat-select">
+          <option value="all">All Categories</option>
+          <option value="food">Food</option>
+          <option value="rent">Rent</option>
+          <option value="travel">Travel</option>
+          <option value="salary">Salary</option>
+          <option value="freelance">Freelance</option>
+          <option value="bills">Bills</option>
+          <option value="other">Other</option>
+        </select>
+        <button class="addNewBtn" id="addNewBtn">+ Add</button>
+      </div>
+
+      <div class="tx-label">Transactions</div>
+      <div class="tx-container">
+        <div class="tx-list" id="txList"></div>
+      </div>
+    </div>
+    <div class="modal-overlay hidden">
+      <div class="new-tx-modal">
+        <div class="tx-modal-label">
+          <p id="modal-title">Add transaction</p>
+          <div class="close-modal">X</div>
+        </div>
+        <div class="tx-inner">
+          <p>Title</p>
+          <input
+            type="text"
+            class="tx-input"
+            id="tx-title-input"
+            placeholder="e.g. Lunch, Salary..."
+          />
+        </div>
+        <div class="tx-inner">
+          <p>Amount (&#8377;)</p>
+          <input
+            type="text"
+            class="tx-input"
+            id="tx-amount-input"
+            placeholder="0"
+          />
+        </div>
+        <div class="tx-inner">
+          <p>Type</p>
+          <div class="tx-type">
+            <div class="type" id="incomeType" data-value="income">
+              &uarr; Income
+            </div>
+            <div class="type" id="expenseType" data-value="expense">
+              &darr; Expense
+            </div>
+          </div>
+        </div>
+        <div class="tx-inner">
+          <p>Category</p>
+          <select id="tx-category-select">
+            <option value="salary">Salary</option>
+            <option value="freelance">Freelance</option>
+            <option value="investment">Investment</option>
+            <option value="food">Food</option>
+            <option value="rent">Rent</option>
+            <option value="travel">Travel</option>
+            <option value="bills">Bills</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="tx-save-btn">
+          <button class="save-btn">Save transaction</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
